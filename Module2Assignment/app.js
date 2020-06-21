@@ -63,9 +63,11 @@
       boughtItemsList.push(item);
       buyItemsList.splice(itemIndex, 1);
     };
+
     service.getBoughtItems = function () {
       return boughtItemsList;
     };
+
     service.getLength = function () {
       return buyItemsList.length;
     };

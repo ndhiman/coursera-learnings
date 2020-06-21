@@ -1,0 +1,21 @@
+<span><h3>{{list.nothingMessage}}!!</h3></span>
+
+<ol class="list-group">
+  <li class="list-group-item" ng-repeat="item in list.items">
+    <div class="row">
+      <div class="col-8 col-sm-10">
+        <b>Short Name : </b> {{item.short_name}}<br />
+        <b>Name : </b>{{item.name}}<br />
+        <b>Description : </b>{{item.description}}
+      </div>
+      <div class="col col-sm align-self-center">
+        <button
+          class="btn btn-danger"
+          ng-click="list.onRemove({index: $index});"
+        >
+          Don't want this one!
+        </button>
+      </div>
+    </div>
+  </li>
+</ol>
