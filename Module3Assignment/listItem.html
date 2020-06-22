@@ -1,9 +1,7 @@
-<div class="alert alert-danger" role="alert" ng-if="list.onEmpty.length >1">
-  {{list.onEmpty}}
-</div>
+<span><h3>{{list.nothingMessage}}</h3></span>
 
 <ol class="list-group">
-  <li class="list-group-item" ng-repeat="item in list.foundItems">
+  <li class="list-group-item" ng-repeat="item in list.items">
     <div class="row">
       <div class="col-8 col-sm-10">
         <b>Short Name : </b> {{item.short_name}}<br />
