@@ -1,2 +1,2 @@
-# coursera-angular
-For the Assignment of Course
+# coursera-learnings
+For the Assignment of Courses
