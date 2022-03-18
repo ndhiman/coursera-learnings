@@ -1,0 +1,92 @@
+body {
+  font-size: 16px;
+  font-family: "Oxygen", sans-serif;
+}
+
+/* CSS for Nav */
+
+#header-nav {
+  background-color:rgb(236, 151, 39);
+  border-radius: 0;
+  border: 0;
+}
+
+.navbar-brand h1 {
+  font-weight: bold;
+  font-size: 1.75em;
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 0.75;
+}
+
+.navbar-brand a:hover, .navbar-brand a:focus {
+  text-decoration: none;
+}
+
+#nav-list a {
+  color: #951c49;
+  text-align: center;
+}
+
+#nav-list a:hover {
+  font-size: 1.5em;
+  background: #e7e7e7;
+}
+
+
+/* CSS for Heading */
+h2 {
+  font-weight: bold;
+  opacity: .8;
+  color: #c72fc7;
+  margin: 0 auto 30px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+/* CSS for Menu Items */
+.menu-item {
+  overflow: hidden;
+  min-height: 700px;
+  margin: 0 auto 20px;
+}
+
+.menu-items-heading {
+  background-color: darksalmon;
+  margin: 0;
+  padding: 5px;
+}
+
+.menu-items-content, .menu-items-content+span {
+  padding: 10px;
+  font-family: cursive;
+  margin: 0px;
+}
+
+.background:nth-child(1) div {
+  background-color: #7fffd4;
+}
+
+.background:nth-child(1) h3 {
+  background-color: #dc143c;
+  color: #fff;
+}
+
+.background:nth-child(2) div {
+  background-color: #0deea3;
+}
+
+.background:nth-child(2) h3 {
+  background-color: #ee5914;
+  color: #1039be;
+}
+
+.background:nth-child(3) div {
+  background-color: #3cc094;
+}
+
+.background:nth-child(3) h3 {
+  background-color: #ffd700;
+  color: #800080;
+}
