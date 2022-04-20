@@ -53,6 +53,22 @@ $(function () {
     string = string.replace(new RegExp(propToReplace, "g"), propValue);
     return string;
   };
+
+  // Remove the class 'active' from home and switch to Menu button
+  var switchMenuToActive = function () {
+    // Remove 'active' from home button
+    var classes = document.querySelector("#navHomeButton").className;
+    classes = classes.replace(new RegExp("active", "g"), "");
+    document.querySelector("#navHomeButton").className = classes;
+
+    // Add 'active' to menu button if not already there
+    classes = document.querySelector("#navMenuButton").className;
+    if (classes.indexOf("active") == -1) {
+      classes += " active";
+      document.querySelector("#navMenuButton").className = classes;
+    }
+  };
+
   // On page load (before images or CSS)
   document.addEventListener("DOMContentLoaded", function (event) {
     // On first load, show home view
@@ -73,13 +89,12 @@ $(function () {
   };
 
   // Load the menu items view
-  // 'categoryShort' is a short_name for a category, coming from the HTML
+  // 'categoryShort' is a short_name for a category
   dc.loadMenuItems = function (categoryShort) {
     showLoading("#main-content");
     $ajaxUtils.sendGetRequest(
-      //sending the URL + query param name
       menuItemsUrl + categoryShort,
-      buildAndShowMenuItemsHTML //function to be called to handle the response
+      buildAndShowMenuItemsHTML
     );
   };
 
@@ -94,6 +109,9 @@ $(function () {
         $ajaxUtils.sendGetRequest(
           categoryHtml,
           function (categoryHtml) {
+            // Switch CSS class active to menu button
+            switchMenuToActive();
+
             var categoriesViewHtml = buildCategoriesViewHtml(
               categories,
               categoriesTitleHtml,
@@ -138,12 +156,15 @@ $(function () {
   function buildAndShowMenuItemsHTML(categoryMenuItems) {
     // Load title snippet of menu items page
     $ajaxUtils.sendGetRequest(
-      menuItemsTitleHtml, //gets the html page
+      menuItemsTitleHtml,
       function (menuItemsTitleHtml) {
         // Retrieve single menu item snippet
         $ajaxUtils.sendGetRequest(
           menuItemHtml,
           function (menuItemHtml) {
+            // Switch CSS class active to menu button
+            switchMenuToActive();
+
             var menuItemsViewHtml = buildMenuItemsViewHtml(
               categoryMenuItems,
               menuItemsTitleHtml,
